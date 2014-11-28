@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>BIG TWIG</title>
+    </head>
+    <body>
+        <h1>{{ header }}</h1>
+        {% for param in for_array %}
+        <p>{{ param }}</p>
+        {% endfor %}
+        <p>{{ for_array.abc }}</p>
+        <p>Upper: {{ for_array.cjp|upper }}</p>
+        <p>Now: {{ "now"|date('dmYHi') }}</p>
+        <p></p>
+    </body>
+</html>

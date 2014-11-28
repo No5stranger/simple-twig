@@ -13,7 +13,12 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('./templates');
 $twig = new Twig_Environment($loader, array(
-    'cache' => './cache'
+    //'cache' => './cache'
 ));
 
-echo $twig->render('first.html', array('header' => 'TO BE NO!'));
+$forArray = array(
+    'abc' => 'abc',
+    'cjp' => 'cjp'
+);
+
+echo $twig->render('first.html.twig', array('header' => 'TO BE NO!', 'for_array' => $forArray));
