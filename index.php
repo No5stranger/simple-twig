@@ -21,4 +21,15 @@ $forArray = array(
     'cjp' => 'cjp'
 );
 
-echo $twig->render('first.html.twig', array('header' => 'TO BE NO!', 'for_array' => $forArray));
+$jsString = "<script>alert('cjp');</script>";
+
+//echo $twig->render('first.html.twig', array('header' => 'TO BE NO!', 'for_array' => $forArray));
+
+echo $twig->render(
+    'extend_first.html.twig',
+    array(
+        'header' => 'TO BE NO!',
+        'for_array' => $forArray,
+        'js_string' => $jsString
+    )
+    );

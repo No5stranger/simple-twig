@@ -3,6 +3,8 @@
         <title>BIG TWIG</title>
     </head>
     <body>
+        {# mark here, the content will not show in the html page #}
+        {% block header_one %}Some information in parent block{% endblock %}
         <h1>{{ header }}</h1>
         {% for param in for_array %}
         <p>{{ param }}</p>
@@ -10,6 +12,9 @@
         <p>{{ for_array.abc }}</p>
         <p>Upper: {{ for_array.cjp|upper }}</p>
         <p>Now: {{ "now"|date('dmYHi') }}</p>
-        <p></p>
+        <p>Let's include a page: {% include 'one_side.html.twig' %}</p>
+        <span>output js string: {{ js_string|e('js') }}<span>
+        {% import "form.html.twig" as forms %}
+        <p>Used macro: {{ forms.input('username') }}</p>
     </body>
 </html>
